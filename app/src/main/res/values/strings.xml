@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Navigation Drawer</string>
+    <string name="navigation_drawer_open">Abrir, Navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar, Navigation drawer</string>
+    <string name="nav_header_title">Luis Fernando Machado</string>
+    <string name="nav_header_subtitle">luis.machado@android.com</string>
+    <string name="nav_header_desc">Cabeçalho</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="menu_home">Início</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Exibição de Slides</string>
+</resources>
