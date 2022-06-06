@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // configura barra de navegação
         setSupportActionBar(binding.appBarMain.toolbar);
+
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,24 +38,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("NoAction", null).show();
             }
         });
+
+        // Cria uma referência para toda a àrea do NavigationDrawer
         DrawerLayout drawer = binding.drawerLayout;
+
+        // Cria uma referência para a àrea de navegação
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // Define configurações do NavigationDrawer
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        // Cria referência para a àrea que irá carregar os fragments
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+
+        // Configura o menu superir de navegação, ou o Menu de ações da ActionBar
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+
+        // Configura a negação dentro das opções no NavigationView
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
